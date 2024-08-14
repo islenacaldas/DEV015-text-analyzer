@@ -1,21 +1,54 @@
-const analyzer = {  
+const analyzer = {
   getWordCount: (text) => {
-    //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
+    const words = text.trim().split(/\s+/);
+    return words.length;
   },
   getCharacterCount: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
+    return text.length;
   },
   getCharacterCountExcludingSpaces: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
+    return text.replace(/ /g, '').length;
   },
-  getAverageWordLength: (text) => {    
-    //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
+  getAverageWordLength: (text) => {
+    const words = text.trim().split(/\s+/);
+    if (words.length === 0) return 0;
+
+    let totalLength = 0;
+    for (let word of words) {
+      totalLength += word.length;
+    }
+    return totalLength / words.length;
   },
-  getNumberCount: (text) => {
-    //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
+
+  getNumberCount: (text) => { 
+    let count = 0;
+    for (let char of text) {
+      if (char >= '0' && char <= '9') {
+        count++;
+      }
+    }
+    return count;
   },
+
   getNumberSum: (text) => {
-    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
+    // Sumar todos los números encontrados en el texto
+    let sum = 0;
+    let currentNumber = '';
+
+    for (let char of text) {
+      if (char >= '0' && char <= '9') {
+        currentNumber += char;
+      } else if (currentNumber !== '') {
+        sum += parseInt(currentNumber);
+        currentNumber = '';
+      }
+    }
+
+    if (currentNumber !== '') {
+      sum += parseInt(currentNumber);
+    }
+
+    return sum;
   },
 };
 

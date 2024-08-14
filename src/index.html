@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html>
 
+  <!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Analizador de texto</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analizador de Texto</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-  <script src="index.js" type="module"></script>
+<li>
+<header>
+  <h1>Analizador de Texto</h1>
+</header>
+<li class="container">
+  <li id="metrics">
+    <li>
+    <li><button class="boton">Caracteres: <span id="characterCount">0</span></button></li>
+    <li><button class="boton">Caracteres sin espacio: <span id="characterNoSpaceCount">0</span></button></li>
+    <li><button class="boton">Palabras: <span id="wordCount">0</span></button></li>
+    <li><button class="boton">Números: <span id="numberCount">0</span></button></li>
+    <li><button class="boton">Suma de números: <span id="numberSum">0</span></button></li>
+    <li><button class="boton">Promedio de longitud: <span id="averageLength">0</span></button></li>
+  </ul>
+  </div>
+  <textarea id="textInput" rows="10" cols="50"></textarea>
+  <button id="clearButton" class="btn">Limpiar métricas</button>
+  <script type="module" src="index.js"></script>
+</div> 
 </body>
 </html>
