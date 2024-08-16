@@ -1,6 +1,6 @@
 import analyzer from './analyzer.js';
 
-const textArea = document.getElementById('textInput');
+const textArea = document.querySelector('textarea[name="user-input"]');
 const metricsElements = {
   characters: document.getElementById('characterCount'),
   charactersNoSpaces: document.getElementById('characterNoSpaceCount'),
@@ -23,7 +23,7 @@ function updateMetrics() {
 }
 
 document.getElementById('clearButton').addEventListener('click', () => {
-  textArea.value = '';
+  textArea.value ='';
   updateMetrics();
 });
 

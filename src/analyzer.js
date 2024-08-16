@@ -11,19 +11,20 @@ const analyzer = {
   },
   getAverageWordLength: (text) => {
     const words = text.trim().split(/\s+/);
-    if (words.length === 0) return 0;
+    if (words.length === 0 || words[0] === "") return 0;
 
     let totalLength = 0;
-    for (let word of words) {
+    for (const word of words) {
       totalLength += word.length;
     }
-    return totalLength / words.length;
+   return parseInt(totalLength / words.length);
+   
   },
 
   getNumberCount: (text) => { 
     let count = 0;
-    for (let char of text) {
-      if (char >= '0' && char <= '9') {
+    for (let i=0; i<text.length; i++) {
+      if (text[i] ===Number) {
         count++;
       }
     }
@@ -35,12 +36,12 @@ const analyzer = {
     let sum = 0;
     let currentNumber = '';
 
-    for (let char of text) {
+    for (const char of text) {
       if (char >= '0' && char <= '9') {
         currentNumber += char;
       } else if (currentNumber !== '') {
         sum += parseInt(currentNumber);
-        currentNumber = '';
+        currentNumber = ''; 
       }
     }
 

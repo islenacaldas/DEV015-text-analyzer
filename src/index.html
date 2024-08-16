@@ -7,24 +7,25 @@
   <title>Analizador de Texto</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<li>
+<body>
 <header>
   <h1>Analizador de Texto</h1>
 </header>
-<li class="container">
-  <li id="metrics">
-    <li>
-    <li><button class="boton">Caracteres: <span id="characterCount">0</span></button></li>
-    <li><button class="boton">Caracteres sin espacio: <span id="characterNoSpaceCount">0</span></button></li>
-    <li><button class="boton">Palabras: <span id="wordCount">0</span></button></li>
-    <li><button class="boton">Números: <span id="numberCount">0</span></button></li>
-    <li><button class="boton">Suma de números: <span id="numberSum">0</span></button></li>
-    <li><button class="boton">Promedio de longitud: <span id="averageLength">0</span></button></li>
+<div class="container-box">
+  <div class="bottoncitos">
+  <ul class="metrics">  
+    <li class="boton">Caracteres: <span id="characterCount">0</span></li>
+    <li class="boton">Caracteres sin espacio: <span id="characterNoSpaceCount">0</span></li>
+    <li class="boton">Palabras: <span id="wordCount">0</span></li>
+    <li class="boton">Números:<span id="numberCount">0</span></li>
+    <li class="boton">Suma de números:<span id="numberSum">0</span></li>
+    <li class="boton">Promedio de longitud:<span id="averageLength">0</span></li>
   </ul>
-  </div>
-  <textarea id="textInput" rows="10" cols="50"></textarea>
+</div>
+  <textarea name="user-input" rows="10" cols="50"></textarea>
   <button id="clearButton" class="btn">Limpiar métricas</button>
+  <footer><p>Hecho por Islena </p></footer>
   <script type="module" src="index.js"></script>
-</div> 
+</div>
 </body>
 </html>
