@@ -28,7 +28,6 @@ const analyzer = {
     for (let i = 0; i < text.length; i++) {
       if (/[0-9]/.test(text[i])) {
         if (!inNumber) {
-          // Verificar si es un número válido
           let j = i;
           while (j < text.length && /[0-9.]/.test(text[j])) {
             j++;
@@ -65,7 +64,6 @@ const analyzer = {
         isValidNumber = true;
       }
   
-      // Verificar si el siguiente carácter es una letra
       if (currentNumber !== "" && i + 1 < text.length && /[a-zA-Z]/.test(text[i + 1])) {
         isValidNumber = false;
       }
